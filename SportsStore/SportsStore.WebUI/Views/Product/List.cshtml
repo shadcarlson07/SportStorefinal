@@ -1,0 +1,23 @@
+﻿@model SportsStore.WebUI.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach (var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}
+
+<script>
+    $(document).ready(function () {
+        $('.test').keyup(function () {
+            $('.test').fadeout("slow",function(){alert("fade is done!")})
+        })
+    });
+</script>
+@*Html.PagedProductGrid(Model.PagingInfo, Model.Products)
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x=> Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>*@
